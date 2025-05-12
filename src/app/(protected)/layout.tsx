@@ -3,7 +3,8 @@ import ProtectedHeader from './components/header';
 import { redirect } from 'next/navigation';
 import { getUser } from '@/api/user';
 import { AuthHydrator } from '@/components/authHydrator';
-;
+import ProtectedFragment from './components/protected-fragment';
+
 
 const ProtectedLayout = async ({ children }: { children: React.ReactNode }) => {
     const user = await getUser();
@@ -13,14 +14,14 @@ const ProtectedLayout = async ({ children }: { children: React.ReactNode }) => {
     }
 
     return (
-        <div>
+        <ProtectedFragment>
             <AuthHydrator user={user.data.user}>
                 <ProtectedHeader />
                 <div className='mx-auto w-full md:max-w-[951px]'>
                     {children}
                 </div>
             </AuthHydrator>
-        </div>
+        </ProtectedFragment>
     );
 };
 

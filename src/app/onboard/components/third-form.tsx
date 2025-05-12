@@ -79,7 +79,7 @@ const ExperienceForm = () => {
                     toast.error(res.message || "Something went wrong");
                     return;
                 }
-                toast.success("You have successfully updated your profile");
+                // toast.success("You have successfully updated your profile");
                 setValue('config.currentForm', 4);
                 console.log("Profile update response:", res);
             } catch (error) {
