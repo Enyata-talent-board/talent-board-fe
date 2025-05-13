@@ -1,3 +1,4 @@
+import { env } from "@/lib/env";
 import { redirect } from "next/navigation";
 
 interface CallbackPageProps {
@@ -17,5 +18,10 @@ export default function AuthCallbackPage({ searchParams }: CallbackPageProps) {
   console.log('refresh token at callback', refreshToken)
   console.log('access token at callback', accessToken)
 
-  redirect(`/api/auth/finalize?access_token=${accessToken}&refresh_token=${refreshToken}`);
+  if (env("appEnv") === 'local') {
+    redirect(`/api/auth/finalize?access_token=${accessToken}&refresh_token=${refreshToken}`);
+  } else {
+    redirect(`/auth/finalize/client?access_token=${accessToken}&refresh_token=${refreshToken}`);
+  }
+
 }

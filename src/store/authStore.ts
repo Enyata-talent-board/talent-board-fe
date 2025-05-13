@@ -14,14 +14,14 @@ export type User = {
 interface AuthState {
     user: User | null;
     accessToken: string | null;
-    refreshToken: string | null;
+    refreshToken: string| undefined;
     loading: boolean;
     is_authenticated: boolean;
     resetAuth: () => void;
     set_isAuthenticated: (isAuthenticated: boolean) => void;
     setUser: (user: User) => void;
     setAccessToken: (token: string) => void;
-    setRefreshToken: (refreshToken: string) => void;
+    setRefreshToken: (refreshToken: string | undefined) => void;
     setLoading: (loading: boolean) => void;
     logout: () => void;
 }
@@ -29,7 +29,7 @@ interface AuthState {
 export const useAuthStore = create<AuthState>((set) => ({
     user: null,
     accessToken: null,
-    refreshToken: null,
+    refreshToken: undefined,
     loading: false,
     is_authenticated: false,
     resetAuth: () => set({ user: null, accessToken: null }),

@@ -5,16 +5,19 @@ import { useEffect, useState } from "react";
 
 export function AuthHydrator({
   user,
+  refreshToken,
   children,
 }: {
   user: User;
+  refreshToken:string | undefined;
   children: React.ReactNode;
 }) {
-  const { setUser } = useAuthStore();
+  const { setUser, setRefreshToken } = useAuthStore();
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     setUser(user);
+    setRefreshToken(refreshToken)
     setHydrated(true);
   }, [user]);
 

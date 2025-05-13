@@ -1,11 +1,11 @@
 'use client';
 import React from 'react'
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import { ProgressProvider } from '@bprogress/next/app';
 
 const ProtectedFragment = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
-            <ProgressBar
+            <ProgressProvider
                 height="3px"
                 color="#7557D3"
                 options={{ showSpinner: false }}

@@ -15,8 +15,8 @@ export async function GET(req: NextRequest) {
         name: "access_token",
         value: accessToken,
         httpOnly: true,
-        sameSite: "strict",
-        secure: true,
+        // sameSite: "strict",
+        // secure: true,
         path: "/",
     });
 
@@ -24,8 +24,8 @@ export async function GET(req: NextRequest) {
         name: "refresh_token",
         value: refreshToken,
         httpOnly: true,
-        sameSite: "strict",
-        secure: true,
+        // sameSite: "strict",
+        // secure: true,
         path: "/",
     });
 

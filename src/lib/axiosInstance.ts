@@ -12,10 +12,15 @@ const API = axios.create({
 // Request interceptor
 API.interceptors.request.use((config) => {
   const token = useAuthStore.getState().accessToken;
+  const refreshToken = useAuthStore.getState().refreshToken;
   console.log('token at API', token)
+  console.log('refreshtoken at API', refreshToken)
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  // if (refreshToken) {
+  //   config.headers["x-refresh-token"] = refreshToken;
+  // }
   return config;
 });
 

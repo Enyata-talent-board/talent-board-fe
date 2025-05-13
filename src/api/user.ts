@@ -14,6 +14,7 @@ export async function getUser() {
     const res = await fetch(`${env("apiUrl")}/api/v1/users/me`, {
         headers: {
             Authorization: `Bearer ${accessToken?.value}`,
+            // 'x-refresh-token': refreshToken?.value,
             // Cookie: `refresh_token=${refreshToken.value}`,
         },
         credentials: "include",
