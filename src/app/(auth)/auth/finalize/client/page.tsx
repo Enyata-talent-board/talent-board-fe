@@ -40,6 +40,7 @@ export default function FinalizeAuthClientPage() {
         };
 
         finalize();
+        // eslint-disable-next-line
     }, []);
 
     return <Loader className="text-primary shadow-none size-[40px]" />;

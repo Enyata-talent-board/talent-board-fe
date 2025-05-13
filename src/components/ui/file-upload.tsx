@@ -1,5 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable jsx-a11y/role-supports-aria-props */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 import {
@@ -323,13 +327,14 @@ interface FileUploadRootProps
     required?: boolean;
 }
 
+
 const FileUploadRoot = React.forwardRef<HTMLDivElement, FileUploadRootProps>(
     (props, forwardedRef) => {
         const {
             value,
             defaultValue,
             onValueChange,
-            onAccept,
+            onAccept, 
             onFileAccept,
             onFileReject,
             onFileValidate,

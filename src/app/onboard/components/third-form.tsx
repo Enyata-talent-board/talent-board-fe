@@ -26,7 +26,7 @@ const ROLESOPTIONS = [
 ]
 
 const ExperienceForm = () => {
-    const { register, watch, setValue, control, formState: { isValid, errors } } = useFormContext();
+    const { register, watch, setValue, control, formState: { isValid} } = useFormContext();
     const role = watch("data.role");
 
     const commonFieldsFilled = !!watch("data.linkedin");

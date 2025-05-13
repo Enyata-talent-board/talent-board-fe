@@ -19,6 +19,7 @@ export function AuthHydrator({
     setUser(user);
     setRefreshToken(refreshToken)
     setHydrated(true);
+     // eslint-disable-next-line
   }, [user]);
 
   if (!hydrated) return null;

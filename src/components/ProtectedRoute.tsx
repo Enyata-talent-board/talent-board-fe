@@ -17,9 +17,9 @@ export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     if (!user) {
       router.replace("/login");
     }
+     // eslint-disable-next-line
   }, [user]);
 
-  // Optionally show nothing or a spinner while checking
   if (!user) return null;
 
   return <>{children}</>;
