@@ -18,9 +18,9 @@ API.interceptors.request.use((config) => {
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  // if (refreshToken) {
-  //   config.headers["x-refresh-token"] = refreshToken;
-  // }
+  if (refreshToken) {
+    config.headers["x-refresh-token"] = refreshToken;
+  }
   return config;
 });
 
