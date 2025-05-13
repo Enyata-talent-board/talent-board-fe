@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+//add superfine to adjust based on roles
 export const onboardFormSchema = z
   .object({
     config: z.object({
@@ -100,5 +101,7 @@ export const onboardFormSchema = z
 //     }
 //   }
 // });
+
+
 
 export type OnboardFormSchema = z.infer<typeof onboardFormSchema>;
